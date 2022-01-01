@@ -1,18 +1,20 @@
 package thread;
 
+//This code is for learn the thread
+
 import java.io.IOException;
 
-public class TerminateThread extends Thread{
+public class TerminateThread extends Thread{	// sample thread
 	
-	private boolean flag = false;
+	private boolean flag = false;		// check the thread is on/off
 
 	
 	public TerminateThread(String name) {
 		super(name);
 	}
 	
-	public void run() {
-		while(!flag) {
+	public void run() {		
+		while(!flag) {			//while thread is alive
 			try {
 				sleep(100);
 			}
