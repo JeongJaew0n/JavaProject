@@ -1,45 +1,48 @@
 package thread;
 
+This code is for learn the Wait and Notify in thread
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class LibrarySystem {
-	public ArrayList<String> books = new ArrayList<String>();
+class LibrarySystem {	// Main system of Library. In here, It will be created static object
+	public ArrayList<String> books = new ArrayList<String>();	
 	
-	public void addBook(String book_name) {
+	public void addBook(String book_name) {	// Add a book name to book array list 
 		books.add(book_name);
 	}
 	
-	public void rmBook(String book_name) {
+	public void rmBook(String book_name) {	// Remove a book name from book array list
 		boolean no_search = true;
-		if(books.size() > 0) {
-			for(int i=0; i<books.size(); i++) {
+		if(books.size() > 0) {		
+			for(int i=0; i<books.size(); i++) {		
 				if(books.get(i).equals(book_name)) {
 					books.remove(i);
 					no_search = false;
 					break;
 				}
 			}
-			if(no_search)	System.out.println("Ã£´Â °á°ú°¡ ¾ø½À´Ï´Ù.");
+			if(no_search)	System.out.println("ì°¾ëŠ” ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.");
 		}
 		else {
-			System.out.println("Ã¥ÀÌ ¾ø½À´Ï´Ù!");
+			System.out.println("ì±…ì´ ì—†ìŠµë‹ˆë‹¤!");
 		}
 	}
 	
-	public synchronized String lendBook() throws InterruptedException {
+	public synchronized String lendBook() throws InterruptedException {	// Lend a book. This can have race condition.
 		
 		Thread t = Thread.currentThread();
 		
 		while(books.size()==0) {
 			System.out.println(t.getName() + " wating start");
-			wait();
+			wait();							//if dont's use wait, infinite roop. why?
+										//ë©”ì„œë“œ ì§„ìž…ì‹œì— ê°€ì§€ê³  ìžˆë˜ ê°’ì´ ê°±ì‹ ì´ ì•ˆë¨.
 			System.out.println(t.getName() + " wating end");
 		}
 		
 		String lendBook = books.remove(0);
 		
-		System.out.println(t.getName() + "ÀÌ°¡" + lendBook + " ºô·È½À´Ï´Ù.");
+		System.out.println(t.getName() + "ì´ê°€" + lendBook + " ë¹Œë ¸ìŠµë‹ˆë‹¤.");
 		
 		return lendBook;
 	}
@@ -48,8 +51,8 @@ class LibrarySystem {
 		Thread t = Thread.currentThread();
 		
 		books.add(book_name);
-		notifyAll();
-		System.out.println(t.getName() + "ÀÌ°¡" + book_name + " ¹Ý³³Çß½À´Ï´Ù.");
+		notifyAll();		//notifyAll is more fair than notify
+		System.out.println(t.getName() + "ì´ê°€" + book_name + " ë°˜ë‚©í–ˆìŠµë‹ˆë‹¤.");
 	}
 }
 
@@ -83,29 +86,29 @@ public class WaitNoti {
 		Scanner sc = new Scanner(System.in);
 		
 		while(ex == 0) { 
-			System.out.println("Library½Ã½ºÅÛ¿¡ ¿Â°É È¯¿µÇÕ´Ï´Ù.\n1.Ã¥ Ãß°¡ 2.Ã¥ »èÁ¦ 3.½º·¹µåÃÊ±âÈ­ 4.Á¾·á 5.Ã¥¸ñ·Ï");
-			System.out.println("6.ÇÐ»ýÃß°¡ 7.ÇÐ»ýÇàµ¿");
+			System.out.println("Libraryì‹œìŠ¤í…œì— ì˜¨ê±¸ í™˜ì˜í•©ë‹ˆë‹¤.\n1.ì±… ì¶”ê°€ 2.ì±… ì‚­ì œ 3.ìŠ¤ë ˆë“œì´ˆê¸°í™” 4.ì¢…ë£Œ 5.ì±…ëª©ë¡");
+			System.out.println("6.í•™ìƒì¶”ê°€ 7.í•™ìƒí–‰ë™");
 			int sel = sc.nextInt();
 			sc.nextLine();
 			switch(sel) {
 			case 1:
-				System.out.println("Ãß°¡ÇÒ Ã¥ Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+				System.out.println("ì¶”ê°€í•  ì±… ì œëª©ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
 				String book_name = sc.nextLine();
 				if(book_name.equals("t")) {
-					ChangLibrary.lib_sys.addBook("ÅÂ¹é»ê¸Æ1");
-					ChangLibrary.lib_sys.addBook("ÅÂ¹é»ê¸Æ2");
-					ChangLibrary.lib_sys.addBook("ÅÂ¹é»ê¸Æ3");
-					ChangLibrary.lib_sys.addBook("ÅÂ¹é»ê¸Æ4");
+					ChangLibrary.lib_sys.addBook("íƒœë°±ì‚°ë§¥1");
+					ChangLibrary.lib_sys.addBook("íƒœë°±ì‚°ë§¥2");
+					ChangLibrary.lib_sys.addBook("íƒœë°±ì‚°ë§¥3");
+					ChangLibrary.lib_sys.addBook("íƒœë°±ì‚°ë§¥4");
 				}
 				else ChangLibrary.lib_sys.addBook(book_name);
 				break;
 			case 2:
-				System.out.println("»èÁ¦ÇÒ Ã¥ Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+				System.out.println("ì‚­ì œí•  ì±… ì œëª©ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
 				ChangLibrary.lib_sys.rmBook(sc.nextLine());
 				break;
 			case 3:
 				for(Student ss: students) {
-					System.out.println(ss.getName()+" Á¾·áµË´Ï´Ù.");
+					System.out.println(ss.getName()+" ì¢…ë£Œë©ë‹ˆë‹¤.");
 					ss.interrupt();
 				}
 				break;
@@ -119,20 +122,20 @@ public class WaitNoti {
 				break;
 			case 6:
 				students.add(new Student());
-				System.out.println("ÇÐ»ýÀÌ 1¸í Ãß°¡µÇ¾ú½À´Ï´Ù. ÇöÀçÇÐ»ý: "+ students.size() + "¸í");
+				System.out.println("í•™ìƒì´ 1ëª… ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤. í˜„ìž¬í•™ìƒ: "+ students.size() + "ëª…");
 				break;
 			case 7:
 				if(students.size() == 0) {
-					System.out.println("ÇÐ»ýÀÌ ¾ø½À´Ï´Ù.");
+					System.out.println("í•™ìƒì´ ì—†ìŠµë‹ˆë‹¤.");
 					break;
 				}
 				if(ChangLibrary.lib_sys.books.size() == 0) {
-					System.out.println("Ã¥ÀÌ ¾ø½À´Ï´Ù.");
+					System.out.println("ì±…ì´ ì—†ìŠµë‹ˆë‹¤.");
 					break;
 				}
 				for(Student ss: students) {
 					if(ss.getState() == Thread.State.NEW) ss.start();
-					else System.out.println("¾²·¹µå´Â run µÈ ´ÙÀ½ Á¾·á ÈÄ ´Ù½Ã ½ÇÇàµÉ ¼ö ¾ø½À´Ï´Ù!!! »õ·Î¿î ½º·¹µå¸¦ »ý¼ºÇÏ°í runÇØÁÖ¼¼¿ä!!!!!");
+					else System.out.println("ì“°ë ˆë“œëŠ” run ëœ ë‹¤ìŒ ì¢…ë£Œ í›„ ë‹¤ì‹œ ì‹¤í–‰ë  ìˆ˜ ì—†ìŠµë‹ˆë‹¤!!! ìƒˆë¡œìš´ ìŠ¤ë ˆë“œë¥¼ ìƒì„±í•˜ê³  runí•´ì£¼ì„¸ìš”!!!!!");
 				}
 				break;
 			}
