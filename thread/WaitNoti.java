@@ -33,7 +33,7 @@ class LibrarySystem {	// Main system of Library. In here, It will be created sta
 		
 		Thread t = Thread.currentThread();
 		
-		while(books.size()==0) {
+		while(books.size()==0) {		//if you use notify(), you can use if.
 			System.out.println(t.getName() + " wating start");
 			wait();							//if dont's use wait, infinite roop. why?
 										//메서드 진입시에 가지고 있던 값이 갱신이 안됨.
