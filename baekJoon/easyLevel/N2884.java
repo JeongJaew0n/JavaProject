@@ -1,4 +1,4 @@
-package middleLevel;
+package easyLevel;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -7,23 +7,23 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-//»ó±ÙÀÌ´Â ¸ÅÀÏ ¾ÆÄ§ ¾Ë¶÷À» µè°í ÀÏ¾î³­´Ù. ¾Ë¶÷À» µè°í ¹Ù·Î ÀÏ¾î³ª¸é ´ÙÇàÀÌ°ÚÁö¸¸, Ç×»ó Á¶±Ý¸¸ ´õ ÀÚ·Á´Â ¸¶À½ ¶§¹®¿¡ ¸ÅÀÏ ÇÐ±³¸¦ Áö°¢ÇÏ°í ÀÖ´Ù.
-//»ó±ÙÀÌ´Â ¸ðµç ¹æ¹ýÀ» µ¿¿øÇØº¸¾ÒÁö¸¸, Á¶±Ý¸¸ ´õ ÀÚ·Á´Â ¸¶À½Àº ±× ¾î¶² °Íµµ ¾ø¾Ù ¼ö°¡ ¾ø¾ú´Ù.
-//ÀÌ·± »ó±ÙÀÌ¸¦ ºÒ½ÖÇÏ°Ô º¸´ø, Ã¢¿µÀÌ´Â ÀÚ½ÅÀÌ »ç¿ëÇÏ´Â ¹æ¹ýÀ» ÃßÃµÇØ ÁÖ¾ú´Ù.
-//¹Ù·Î "45ºÐ ÀÏÂï ¾Ë¶÷ ¼³Á¤ÇÏ±â"ÀÌ´Ù.
-//ÀÌ ¹æ¹ýÀº ´Ü¼øÇÏ´Ù. ¿ø·¡ ¼³Á¤µÇ¾î ÀÖ´Â ¾Ë¶÷À» 45ºÐ ¾Õ¼­´Â ½Ã°£À¸·Î ¹Ù²Ù´Â °ÍÀÌ´Ù. ¾îÂ÷ÇÇ ¾Ë¶÷ ¼Ò¸®¸¦ µéÀ¸¸é, ¾Ë¶÷À» ²ô°í Á¶±Ý ´õ Àß °ÍÀÌ±â ¶§¹®ÀÌ´Ù. ÀÌ ¹æ¹ýÀ» »ç¿ëÇÏ¸é, ¸ÅÀÏ ¾ÆÄ§ ´õ Àä´Ù´Â ±âºÐÀ» ´À³¥ ¼ö ÀÖ°í, ÇÐ±³µµ Áö°¢ÇÏÁö ¾Ê°Ô µÈ´Ù.
-//ÇöÀç »ó±ÙÀÌ°¡ ¼³Á¤ÇÑ ¾Ë¶÷ ½Ã°¢ÀÌ ÁÖ¾îÁ³À» ¶§, Ã¢¿µÀÌÀÇ ¹æ¹ýÀ» »ç¿ëÇÑ´Ù¸é, ÀÌ¸¦ ¾ðÁ¦·Î °íÃÄ¾ß ÇÏ´ÂÁö ±¸ÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
+//ìƒê·¼ì´ëŠ” ë§¤ì¼ ì•„ì¹¨ ì•ŒëžŒì„ ë“£ê³  ì¼ì–´ë‚œë‹¤. ì•ŒëžŒì„ ë“£ê³  ë°”ë¡œ ì¼ì–´ë‚˜ë©´ ë‹¤í–‰ì´ê² ì§€ë§Œ, í•­ìƒ ì¡°ê¸ˆë§Œ ë” ìžë ¤ëŠ” ë§ˆìŒ ë•Œë¬¸ì— ë§¤ì¼ í•™êµë¥¼ ì§€ê°í•˜ê³  ìžˆë‹¤.
+//ìƒê·¼ì´ëŠ” ëª¨ë“  ë°©ë²•ì„ ë™ì›í•´ë³´ì•˜ì§€ë§Œ, ì¡°ê¸ˆë§Œ ë” ìžë ¤ëŠ” ë§ˆìŒì€ ê·¸ ì–´ë–¤ ê²ƒë„ ì—†ì•¨ ìˆ˜ê°€ ì—†ì—ˆë‹¤.
+//ì´ëŸ° ìƒê·¼ì´ë¥¼ ë¶ˆìŒí•˜ê²Œ ë³´ë˜, ì°½ì˜ì´ëŠ” ìžì‹ ì´ ì‚¬ìš©í•˜ëŠ” ë°©ë²•ì„ ì¶”ì²œí•´ ì£¼ì—ˆë‹¤.
+//ë°”ë¡œ "45ë¶„ ì¼ì° ì•ŒëžŒ ì„¤ì •í•˜ê¸°"ì´ë‹¤.
+//ì´ ë°©ë²•ì€ ë‹¨ìˆœí•˜ë‹¤. ì›ëž˜ ì„¤ì •ë˜ì–´ ìžˆëŠ” ì•ŒëžŒì„ 45ë¶„ ì•žì„œëŠ” ì‹œê°„ìœ¼ë¡œ ë°”ê¾¸ëŠ” ê²ƒì´ë‹¤. ì–´ì°¨í”¼ ì•ŒëžŒ ì†Œë¦¬ë¥¼ ë“¤ìœ¼ë©´, ì•ŒëžŒì„ ë„ê³  ì¡°ê¸ˆ ë” ìž˜ ê²ƒì´ê¸° ë•Œë¬¸ì´ë‹¤. ì´ ë°©ë²•ì„ ì‚¬ìš©í•˜ë©´, ë§¤ì¼ ì•„ì¹¨ ë” ìž¤ë‹¤ëŠ” ê¸°ë¶„ì„ ëŠë‚„ ìˆ˜ ìžˆê³ , í•™êµë„ ì§€ê°í•˜ì§€ ì•Šê²Œ ëœë‹¤.
+//í˜„ìž¬ ìƒê·¼ì´ê°€ ì„¤ì •í•œ ì•ŒëžŒ ì‹œê°ì´ ì£¼ì–´ì¡Œì„ ë•Œ, ì°½ì˜ì´ì˜ ë°©ë²•ì„ ì‚¬ìš©í•œë‹¤ë©´, ì´ë¥¼ ì–¸ì œë¡œ ê³ ì³ì•¼ í•˜ëŠ”ì§€ êµ¬í•˜ëŠ” í”„ë¡œê·¸ëž¨ì„ ìž‘ì„±í•˜ì‹œì˜¤.
 
-//ÀÔ·Â: Ã¹Â° ÁÙ¿¡ µÎ Á¤¼ö H¿Í MÀÌ ÁÖ¾îÁø´Ù. (0 ¡Â H ¡Â 23, 0 ¡Â M ¡Â 59) ±×¸®°í ÀÌ°ÍÀº ÇöÀç »ó±ÙÀÌ°¡ ¼³Á¤ÇÑ ³õÀº ¾Ë¶÷ ½Ã°£ H½Ã MºÐÀ» ÀÇ¹ÌÇÑ´Ù.
-//ÀÔ·Â ½Ã°£Àº 24½Ã°£ Ç¥ÇöÀ» »ç¿ëÇÑ´Ù. 24½Ã°£ Ç¥Çö¿¡¼­ ÇÏ·çÀÇ ½ÃÀÛÀº 0:0(ÀÚÁ¤)ÀÌ°í, ³¡Àº 23:59(´ÙÀ½³¯ ÀÚÁ¤ 1ºÐ Àü)ÀÌ´Ù. ½Ã°£À» ³ªÅ¸³¾ ¶§, ºÒÇÊ¿äÇÑ 0Àº »ç¿ëÇÏÁö ¾Ê´Â´Ù.
+//ìž…ë ¥: ì²«ì§¸ ì¤„ì— ë‘ ì •ìˆ˜ Hì™€ Mì´ ì£¼ì–´ì§„ë‹¤. (0 â‰¤ H â‰¤ 23, 0 â‰¤ M â‰¤ 59) ê·¸ë¦¬ê³  ì´ê²ƒì€ í˜„ìž¬ ìƒê·¼ì´ê°€ ì„¤ì •í•œ ë†“ì€ ì•ŒëžŒ ì‹œê°„ Hì‹œ Më¶„ì„ ì˜ë¯¸í•œë‹¤.
+//ìž…ë ¥ ì‹œê°„ì€ 24ì‹œê°„ í‘œí˜„ì„ ì‚¬ìš©í•œë‹¤. 24ì‹œê°„ í‘œí˜„ì—ì„œ í•˜ë£¨ì˜ ì‹œìž‘ì€ 0:0(ìžì •)ì´ê³ , ëì€ 23:59(ë‹¤ìŒë‚  ìžì • 1ë¶„ ì „)ì´ë‹¤. ì‹œê°„ì„ ë‚˜íƒ€ë‚¼ ë•Œ, ë¶ˆí•„ìš”í•œ 0ì€ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ”ë‹¤.
 
-//Ãâ·Â: Ã¹Â° ÁÙ¿¡ »ó±ÙÀÌ°¡ Ã¢¿µÀÌÀÇ ¹æ¹ýÀ» »ç¿ëÇÒ ¶§, ¼³Á¤ÇØ¾ß ÇÏ´Â ¾Ë¶÷ ½Ã°£À» Ãâ·ÂÇÑ´Ù. (ÀÔ·Â°ú °°Àº ÇüÅÂ·Î Ãâ·ÂÇÏ¸é µÈ´Ù.)
+//ì¶œë ¥: ì²«ì§¸ ì¤„ì— ìƒê·¼ì´ê°€ ì°½ì˜ì´ì˜ ë°©ë²•ì„ ì‚¬ìš©í•  ë•Œ, ì„¤ì •í•´ì•¼ í•˜ëŠ” ì•ŒëžŒ ì‹œê°„ì„ ì¶œë ¥í•œë‹¤. (ìž…ë ¥ê³¼ ê°™ì€ í˜•íƒœë¡œ ì¶œë ¥í•˜ë©´ ëœë‹¤.)
 
 public class N2884 {
 
 	public static void main(String[] args) {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 	//¼ýÀÚ ÀÔ·Â ¹Þ±â À§ÇØ
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));	//¼ýÀÚ Ãâ·Â ÇÏ±â À§ÇØ
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 	//ìˆ«ìž ìž…ë ¥ ë°›ê¸° ìœ„í•´
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));	//ìˆ«ìž ì¶œë ¥ í•˜ê¸° ìœ„í•´
 		int h,m;
 		int a_h = 0, a_m = 0;
 		boolean carry = false;
@@ -31,7 +31,7 @@ public class N2884 {
 		
 		try {
 			input = br.readLine();
-			StringTokenizer st = new StringTokenizer(input);	//ÀÔ·Â ¹ÞÀº °ªÀ» °ø¹é ´ÜÀ§·Î ²÷±â À§ÇØ.
+			StringTokenizer st = new StringTokenizer(input);	//ìž…ë ¥ ë°›ì€ ê°’ì„ ê³µë°± ë‹¨ìœ„ë¡œ ëŠê¸° ìœ„í•´.
 			h = Integer.parseInt(st.nextToken());				
 			m = Integer.parseInt(st.nextToken());
 			
@@ -46,6 +46,17 @@ public class N2884 {
 				else a_h = h-1;
 			}
 			else a_h = h;
+			
+			/* good.
+			a_h = h;
+			a_m = m-45;
+			
+			if(a_m<0) {
+				a_m += 60;
+				a_h--;
+				if(a_h<0) a_h +=24;
+			}
+			*/
 			
 			bw.write(a_h + " " + a_m);
 			
