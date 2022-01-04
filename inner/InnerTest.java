@@ -1,4 +1,5 @@
 package inner;
+//ë‚´ë¶€ í´ë˜ìŠ¤
 
 class OutClass {
 	
@@ -14,9 +15,9 @@ class OutClass {
 		int inNum  = 100;
 		
 		void inTest() {
-			System.out.println("OutClass num = " + num + "(¿ÜºÎ Å¬·¡½ºÀÇ ÀÎ½ºÅÏ½º º¯¼ö)");
-			System.out.println("OutClass sNum = " + sNum + "(¿ÜºÎ Å¬·¡½ºÀÇ ½ºÅÂÆ½ º¯¼ö)");
-			System.out.println("InClass inNum = " + inNum + "(³»ºÎ Å¬·¡½ºÀÇ ÀÎ½ºÅÏ½º º¯¼ö)");
+			System.out.println("OutClass num = " + num + "(ì™¸ë¶€ í´ë˜ìŠ¤ì˜ ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜)");	//ì™¸ë¶€ í´ë˜ìŠ¤ì˜ ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜ ì‚¬ìš©ê°€ëŠ¥
+			System.out.println("OutClass sNum = " + sNum + "(ì™¸ë¶€ í´ë˜ìŠ¤ì˜ ìŠ¤íƒœí‹± ë³€ìˆ˜)");	//ì™¸ë¶€ í´ë˜ìŠ¤ ìŠ¤íƒœí‹± ë³€ìˆ˜ ì‚¬ìš©ê°€ëŠ¥
+			System.out.println("InClass inNum = " + inNum + "(ë‚´ë¶€ í´ë˜ìŠ¤ì˜ ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜)");
 		}
 	}
 	public void usingClass() {
@@ -28,12 +29,12 @@ public class InnerTest {
 
 	public static void main(String[] args) {
 		OutClass outClass = new OutClass();
-		System.out.println("¿ÜºÎ Å¬·¡½º ÀÌ¿ëÇÏ¿© ³»ºÎ Å¬·¡½º ±â´É È£Ãâ");
+		System.out.println("ì™¸ë¶€ í´ë˜ìŠ¤ ì´ìš©í•˜ì—¬ ë‚´ë¶€ í´ë˜ìŠ¤ ê¸°ëŠ¥ í˜¸ì¶œ");
 		outClass.usingClass();
 		System.out.println();
 		
 		OutClass.InClass inClass = outClass.new InClass();
-		System.out.println("¿ÜºÎ Å¬·¡½º º¯¼ö¸¦ ÀÌ¿ëÇÏ¿© ³»ºÎ Å¬·¡½º »ı¼º");
+		System.out.println("ì™¸ë¶€ í´ë˜ìŠ¤ ë³€ìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ ë‚´ë¶€ í´ë˜ìŠ¤ ìƒì„±");
 		inClass.inTest();
 	}
 
