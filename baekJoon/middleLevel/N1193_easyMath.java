@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-// 1을 첫 수로 봤을 때 짝수는 내려가고 홀수는 올라갑니다.
-
 // 1 3 6 10 15 ... 같이 차가 1씩 증가 하는 수열이다.
 // 식으로 나타내면 수열의 a(n) = a(n-1) + n이다.
 
