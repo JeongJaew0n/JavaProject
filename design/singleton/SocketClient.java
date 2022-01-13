@@ -1,4 +1,4 @@
-package com.company.design.singleton;
+package singleton;
 
 public class SocketClient {
 

@@ -1,4 +1,4 @@
-package easyLevel;
+package baekJoon.easyLevel;
 
 import java.io.BufferedReader;
 import java.io.IOException;

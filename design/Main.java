@@ -1,8 +1,6 @@
-package com.company.design;
-
-import com.company.design.singleton.Aclazz;
-import com.company.design.singleton.Bclazz;
-import com.company.design.singleton.SocketClient;
+import singleton.Aclazz;
+import singleton.Bclazz;
+import singleton.SocketClient;
 
 public class Main {
 
@@ -14,7 +12,7 @@ public class Main {
         SocketClient aClient = aclazz.getSocketClient();
         SocketClient bClient = bclazz.getSocketClient();
 
-        System.out.println("두 객체가 동일한가?");0
+        System.out.println("두 객체가 동일한가?");
         System.out.println(aClient.equals(bClient));
     }
 }

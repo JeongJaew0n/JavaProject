@@ -1,8 +1,8 @@
-package com.company.design.singleton;
+package singleton;
 
 public class Bclazz {
 
-    private SocketClient socketClient;
+    private final SocketClient socketClient;
 
     public Bclazz() {
         this.socketClient = SocketClient.getInstance();
