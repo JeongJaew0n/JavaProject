@@ -5,7 +5,7 @@ This code is for learn the Wait and Notify in thread
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class LibrarySystem {	// Main system of Library. In here, It will be created static object
+class LibrarySystem {	// singleton.Main system of Library. In here, It will be created static object
 	public ArrayList<String> books = new ArrayList<String>();	
 	
 	public void addBook(String book_name) {	// Add a book name to book array list 
