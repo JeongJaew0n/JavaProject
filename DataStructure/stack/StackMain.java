@@ -4,19 +4,18 @@ import java.util.Arrays;
 
 public class StackMain {
     public static void main(String[] args) {
-        int[] k = new int[11];
-        int[] j = new int[9];
+        MyStack<Integer> myStack = new MyStack<>();
 
-        for(int i=0; i<k.length; i++) {
-            k[i] = i;
+        for(int i=0; i<10; i++) {
+            System.out.println(myStack.push(i*3));
+        }
+        System.out.println(myStack.search(12));
+
+        for(int i=0; i<10; i++) {
+            System.out.println(myStack.pop());
         }
 
-        for(int i=0; i<9; i++) {
-            j[i] = i;
-        }
+        System.out.println(myStack.search(12));
 
-        k = Arrays.copyOf(j,j.length+1);
-
-        System.out.println(k.length);
     }
 }
