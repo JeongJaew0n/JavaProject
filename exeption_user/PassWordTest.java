@@ -1,4 +1,6 @@
-package exeption_user;
+package exeption_user;		
+
+/* 사용자 설정 예외 공부 */
 
 public class PasswordTest {
 
@@ -8,7 +10,7 @@ public class PasswordTest {
 		return password;
 	}
 	
-	public void setPassword(String password) throws PasswordException{
+	public void setPassword(String password) throws PasswordException{	// 예외 발생 시 만들어 둔 PasswordException 에러를 발생시킴
 		
 		if(password == null){
 			throw new PasswordException("비밀번호는 null 일 수 없습니다");
