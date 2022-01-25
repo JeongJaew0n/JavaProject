@@ -18,6 +18,5 @@ public class BrowserProxy implements IBrowser{
 
         System.out.println("BrowserProxy use cache html:" + url);
         return html;
-
     }
 }

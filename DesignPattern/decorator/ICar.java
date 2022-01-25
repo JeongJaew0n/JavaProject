@@ -4,6 +4,8 @@ package decorator;
 
 public interface ICar {
 
+    String getColor();
+
     int getPrice();
     void showPrice();
 }
