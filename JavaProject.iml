@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Algorithm" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DataStructure" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JavaSyntax" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/baekJoon" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
