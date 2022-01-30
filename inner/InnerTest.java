@@ -37,5 +37,6 @@ public class InnerTest {
 		System.out.println("외부 클래스 변수를 이용하여 내부 클래스 생성");
 		inClass.inTest();
 	}
+	// 내부에서 바로 
 
 }
