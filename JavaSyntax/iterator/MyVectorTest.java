@@ -12,12 +12,14 @@ public class MyVectorTest {
         mv.add(4);
         mv.add(5);
 
+        System.out.println(mv.toString());
+
         MyVector it = (MyVector) mv.iterator();
 
-        while(mv.hasNext()){
+        while(it.hasNext()){
             System.out.println(it.next());
-            mv.remove();
-            System.out.println(mv.cursor);
+            it.remove();
+            System.out.println(it.cursor);
             System.out.println(it.lastRet);
         }
     }

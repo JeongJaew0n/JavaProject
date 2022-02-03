@@ -16,16 +16,16 @@ public class BingoWithoutSet {
 
         for (int i = 0; i < 25; i++) {
             int randomNumber = (int)(Math.random() * 24);
-            System.out.println("randomNumber:" + randomNumber);
-            Thread.sleep(500);
+//            System.out.println("randomNumber: " + randomNumber);
+//            Thread.sleep(500);
 
             while(bingo[randomNumber/5][randomNumber%5] != 0) {
-                System.out.println("중복발생 재탐색:" + randomNumber);
+//                System.out.println("duplicated number!: " + randomNumber);
                 if(randomNumber == 0) randomNumber = 24;
                 randomNumber--;
             }
             bingo[randomNumber/5][randomNumber%5] = i;
-            System.out.println(String.format("Successful -> bingo[%d][%d]",randomNumber/5,randomNumber%5));
+//            System.out.println(String.format("Successful -> bingo[%d][%d]",randomNumber/5,randomNumber%5));
         }
 
         for (int i = 0; i < 25; i++) {
