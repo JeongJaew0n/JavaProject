@@ -1,3 +1,5 @@
+package draw_star;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
