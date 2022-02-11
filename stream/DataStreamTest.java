@@ -14,26 +14,28 @@ public class DataStreamTest {
 
 		long millisecond = 0;
 		
-		try(BufferedOutputStream fos = new BufferedOutputStream(new FileOutputStream("data.txt"));	//FileOutputStreamÀº ¸ğµç º¸Á¶ ½ºÆ®¸²ÀÇ »óÀ§ Å¬·¡½ºÀÌ´Ù. 
-																									//¸ğµç º¸Á¶ ½ºÆ®¸²Àº FileOutputStream¶Ç´ÂFileInputStreamÀ» »ó¼Ó ¹ŞÀ½.
-		//Buffered½ºÆ®¸²Àº ³»ºÎÀûÀ¸·Î 8,192byte Å©±âÀÇ ¹è¿­À» °¡Áö°í ÀÖ´Ù.
-		//¹öÆÛ¸µ(buffering)±â´ÉÀ» Á¦°øÇÏ¿© ÇØ´ç Å©±âÀÇ ¹è¿­¿¡ Ã¤¿ö¼­ ÀÔÃâ·ÂÀ» ½ÇÇàÇÏ¹Ç·Î ÇÑ ¹ÙÀÌÆ® ´ÜÀ§³ª ¹®ÀÚ ´ÜÀ§·Î ÀĞ°í ¾²´Â °Í º¸´Ù ºü¸£´Ù.
+		try(BufferedOutputStream fos = new BufferedOutputStream(new FileOutputStream("data.txt"));	//FileOutputStreamì€ ëª¨ë“  ë³´ì¡° ìŠ¤íŠ¸ë¦¼ì˜ ìƒìœ„ í´ë˜ìŠ¤ì´ë‹¤. 
+		
+		//
+		//ëª¨ë“  ë³´ì¡° ìŠ¤íŠ¸ë¦¼ì€ FileOutputStreamë˜ëŠ”FileInputStreamì„ ìƒì† ë°›ìŒ.
+		//BufferedìŠ¤íŠ¸ë¦¼ì€ ë‚´ë¶€ì ìœ¼ë¡œ 8,192byte í¬ê¸°ì˜ ë°°ì—´ì„ ê°€ì§€ê³  ìˆë‹¤.
+		//ë²„í¼ë§(buffering)ê¸°ëŠ¥ì„ ì œê³µí•˜ì—¬ í•´ë‹¹ í¬ê¸°ì˜ ë°°ì—´ì— ì±„ì›Œì„œ ì…ì¶œë ¥ì„ ì‹¤í–‰í•˜ë¯€ë¡œ í•œ ë°”ì´íŠ¸ ë‹¨ìœ„ë‚˜ ë¬¸ì ë‹¨ìœ„ë¡œ ì½ê³  ì“°ëŠ” ê²ƒ ë³´ë‹¤ ë¹ ë¥´ë‹¤.
 				
 			DataOutputStream dos = new DataOutputStream(fos)) { 
-			/* FileReader,FileWriter ±×¸®°í FileInputStream°ú FileOutputStreamÀº ¹®ÀÚ³ª ¹ÙÀÌÆ® Çü½ÄÀ¸·Î ¹®ÀÚ¸¦ ÀĞ°í ¾´´Ù.
-			 * µû¶ó¼­ ÀĞ¾î¿Â ¹®ÀÚ¸¦ ¼ıÀÚ³ª ÀÚ½ÅÀÌ ¿øÇÏ´Â ÀÚ·áÇüÀ¸·Î ¹Ù²ãÁà¾ß ÇÑ´Ù.
-			 * ÇÏÁö¸¸ DataOutputStrem°ú DataInputStreamÀº ÀĞ°í ¾µ¶§ ¹Ù·Î Çüº¯È¯À» ÇØÁØ´Ù.
+			/* FileReader,FileWriter ê·¸ë¦¬ê³  FileInputStreamê³¼ FileOutputStreamì€ ë¬¸ìë‚˜ ë°”ì´íŠ¸ í˜•ì‹ìœ¼ë¡œ ë¬¸ìë¥¼ ì½ê³  ì“´ë‹¤.
+			 * ë”°ë¼ì„œ ì½ì–´ì˜¨ ë¬¸ìë¥¼ ìˆ«ìë‚˜ ìì‹ ì´ ì›í•˜ëŠ” ìë£Œí˜•ìœ¼ë¡œ ë°”ê¿”ì¤˜ì•¼ í•œë‹¤.
+			 * í•˜ì§€ë§Œ DataOutputStremê³¼ DataInputStreamì€ ì½ê³  ì“¸ë•Œ ë°”ë¡œ í˜•ë³€í™˜ì„ í•´ì¤€ë‹¤.
 			 */
 			
 			millisecond = System.currentTimeMillis();				
 		
-			//DataOutputStream¿¡´Â ÀÚ·áÇü º°·Î ¸Ş¼­µå°¡ ÀÖ´Ù. ÇØ´ç ÀÚ·áÇü¿¡ ¸Â´Â Å©±â¿¡ µû¶ó ¸Å°³º¯¼öÀÇ ¸¶Áö¸·n¹ÙÀÌÆ®¸¦ ÆÄÀÏ¿¡ ¾´´Ù.
-			dos.writeByte(100);	//ByteÀÚ·áÇüÀ¸·Î ÆÄÀÏ¿¡ ¾´´Ù. Å©±â´Â 1byte. ¹üÀ§´Â ~-128ºÎÅÍ 127ÀÌ´Ù.
-			dos.writeByte(128);	//µû¶ó¼­ ¹üÀ§¸¦ ÃÊ°úÇÏ´Â °ªÀ» ³ÖÀ» °æ¿ì ¿À¹öÇÃ·Î¿ì ¹ß»ı.
-			dos.writeChar('A');	//CharÀÚ·áÇüÀ¸·Î ÆÄÀÏ¿¡ ¾´´Ù. Å©±â´Â 2byte.
-			dos.writeInt(10);	//IntÀÚ·áÇüÀ¸·Î ÆÄÀÏ¿¡ ¾´´Ù.
+			//DataOutputStreamì—ëŠ” ìë£Œí˜• ë³„ë¡œ ë©”ì„œë“œê°€ ìˆë‹¤. í•´ë‹¹ ìë£Œí˜•ì— ë§ëŠ” í¬ê¸°ì— ë”°ë¼ ë§¤ê°œë³€ìˆ˜ì˜ ë§ˆì§€ë§‰në°”ì´íŠ¸ë¥¼ íŒŒì¼ì— ì“´ë‹¤.
+			dos.writeByte(100);	//Byteìë£Œí˜•ìœ¼ë¡œ íŒŒì¼ì— ì“´ë‹¤. í¬ê¸°ëŠ” 1byte. ë²”ìœ„ëŠ” ~-128ë¶€í„° 127ì´ë‹¤.
+			dos.writeByte(128);	//ë”°ë¼ì„œ ë²”ìœ„ë¥¼ ì´ˆê³¼í•˜ëŠ” ê°’ì„ ë„£ì„ ê²½ìš° ì˜¤ë²„í”Œë¡œìš° ë°œìƒ.
+			dos.writeChar('A');	//Charìë£Œí˜•ìœ¼ë¡œ íŒŒì¼ì— ì“´ë‹¤. í¬ê¸°ëŠ” 2byte.
+			dos.writeInt(10);	//Intìë£Œí˜•ìœ¼ë¡œ íŒŒì¼ì— ì“´ë‹¤.
 			dos.writeFloat(3.14f);
-			dos.writeUTF("Test");	//StringÅ¸ÀÔ. UTF-8Çü½ÄÀ¸·Î ÄÚµùµÈ ¹®ÀÚ¿­À» ¾´´Ù.
+			dos.writeUTF("Test");	//Stringíƒ€ì…. UTF-8í˜•ì‹ìœ¼ë¡œ ì½”ë”©ëœ ë¬¸ìì—´ì„ ì“´ë‹¤.
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
