@@ -16,7 +16,7 @@ public class IteratorTest {
 
         for(Iterator<String> iterator = list.iterator(); iterator.hasNext();){
             String value = iterator.next();
-//            value = iterator.next();      // next 한 번 더하면 오류 발생
+//            value = iterator.next();      // next 한 번 더하면 오류 발생   //
             System.out.println(value);
         }
         System.out.println("-----------------------");
