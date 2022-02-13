@@ -9,7 +9,7 @@ public class N1157_FindTheMostCharacter {
 
     public static void main(String[] args) {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
+//
         /* 알파벳이 26개니까 26크기의 배열을 만들어 준다.
          *  입력받은 문자열을 전부 대문자로 변환시킨다.
          *  */
