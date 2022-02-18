@@ -23,7 +23,6 @@ class dia {
 		}
 	}
 }
-
 public class stars_leve1{
 
 	public static void main(String[] args) throws IOException{
@@ -35,7 +34,7 @@ public class stars_leve1{
 		String s = br.readLine();
 		br.close();
 		int num = Integer.parseInt(s);
-
+		
 		System.out.println(num);
 		
 		d.draw(num);
