@@ -7,7 +7,7 @@ class Solution {
         int[] answer = {};
 
         /* 신고자, 신고한 사람의 형태로 데이터를 저장하면 좋을듯 */
-        //
+        
         String[] reporters = new String[1000];  // 중복을 검사하기 위한 신고자 이름 배열
         String[] reported = new String[reporters.length];
         int reporterCount = 0;
