@@ -3,7 +3,7 @@ package exception;
 public class AutoCloseTestMain {
 
 	public static void main(String[] args) {
-		
+		//
 //		try(AutoCloseableObj obj = new AutoCloseableObj();) {
 //		} catch (Exception e) {
 //			e.printStackTrace();
