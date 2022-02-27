@@ -1,16 +1,16 @@
 package gradeSystem;
-
+//
 import java.util.ArrayList;
 
 public class GenerateGradeReport {
 
 	School school = School.getInstance();
-	public static final String TITLE = "¼ö°­»ı ÇĞÁ¡ \t\t\n";
-	public static final String HEADER = "ÀÌ¸§	|	ÇĞ¹ø	|ÁßÁ¡°ú¸ñ|		 Á¡¼ö		\n";
+	public static final String TITLE = "ìˆ˜ê°•ìƒ í•™ì  \t\t\n";
+	public static final String HEADER = "ì´ë¦„	|	í•™ë²ˆ	|ì¤‘ì ê³¼ëª©|		 ì ìˆ˜		\n";
 	public static final String LINE = "-------------------------------------\n";
 	private StringBuffer buffer = new StringBuffer();
 
-	public String getReport() {		//Ãâ·Â ³»¿ë ²Ù¹Ì±â
+	public String getReport() {		//ì¶œë ¥ ë‚´ìš© ê¾¸ë¯¸ê¸°
 		ArrayList<Subject> subjectList = school.getSubjectList(); //
 		for (Subject sub : subjectList) {
 			makeHeader(sub);
@@ -20,7 +20,7 @@ public class GenerateGradeReport {
 		return buffer.toString();
 	}
 
-	public void makeHeader(Subject subject) {	//Ãâ·Â ³»¿ë Çìµå ºÎºĞ.
+	public void makeHeader(Subject subject) {	//ì¶œë ¥ ë‚´ìš© í—¤ë“œ ë¶€ë¶„.
 		buffer.append(GenerateGradeReport.LINE);
 		buffer.append("\t" + subject.getSubjectName());
 		buffer.append(GenerateGradeReport.TITLE);
@@ -46,23 +46,23 @@ public class GenerateGradeReport {
 		}
 	}
 
-	public void getScoreGrade(Student student, int subjectId) {	//Á¡¼ö Ãâ·ÂÀ» À§ÇÑ ÇÔ¼ö
+	public void getScoreGrade(Student student, int subjectId) {	//ì ìˆ˜ ì¶œë ¥ì„ ìœ„í•œ í•¨ìˆ˜
 		
-		ArrayList<Score> scoreList = student.getScoreList();	//ÀÔ·Â¹ŞÀº ÇĞ»ı °´Ã¼ÀÇ ½ºÄÚ¾îµéÀ» °¡Á®¿È
+		ArrayList<Score> scoreList = student.getScoreList();	//ì…ë ¥ë°›ì€ í•™ìƒ ê°ì²´ì˜ ìŠ¤ì½”ì–´ë“¤ì„ ê°€ì ¸ì˜´
 		
-		int majorId = student.getMajorSubejct().getSubjectid();	//ÁßÁ¡°ú¸ñ ÀÔ·Â¹ŞÀ½
+		int majorId = student.getMajorSubejct().getSubjectid();	//ì¤‘ì ê³¼ëª© ì…ë ¥ë°›ìŒ
 		
-		GradeEvaluation[] gradeEvaluation = { new BasicEvaluation(), new MajorEvaluation(), new PassFailEvaluation() }; // ÇĞÁ¡ Æò°¡ Å¬·¡½ºµé
+		GradeEvaluation[] gradeEvaluation = { new BasicEvaluation(), new MajorEvaluation(), new PassFailEvaluation() }; // í•™ì  í‰ê°€ í´ë˜ìŠ¤ë“¤
 
 		for (int i = 0; i < scoreList.size(); i++) {
 
 			Score score = scoreList.get(i);
 
-			if (score.getSubject().getSubjectid() == subjectId) {	//ÇÔ¼öÀÇ ÀÎÀÚ·Î ³Ñ°Ü¹ŞÀº °ú¸ñ°ú ÇöÀç ¼±ÅÃµÈ Á¡¼öÀÇ °ú¸ñ°ú ÀÏÄ¡ÇÏ´ÂÁö(¼öÇĞÁ¡¼ö Ãâ·ÂÀ» À§ÇØ È£Ãâ µÇ¾ú°í ÇĞ»ıÀÇ Á¡¼ö ¸ñ·ÏÁß ¼öÇĞ Á¡¼ö¸¸À» °¡·Á³»±â À§ÇÑ Á¶°Ç¹®).
+			if (score.getSubject().getSubjectid() == subjectId) {	//í•¨ìˆ˜ì˜ ì¸ìë¡œ ë„˜ê²¨ë°›ì€ ê³¼ëª©ê³¼ í˜„ì¬ ì„ íƒëœ ì ìˆ˜ì˜ ê³¼ëª©ê³¼ ì¼ì¹˜í•˜ëŠ”ì§€(ìˆ˜í•™ì ìˆ˜ ì¶œë ¥ì„ ìœ„í•´ í˜¸ì¶œ ë˜ì—ˆê³  í•™ìƒì˜ ì ìˆ˜ ëª©ë¡ì¤‘ ìˆ˜í•™ ì ìˆ˜ë§Œì„ ê°€ë ¤ë‚´ê¸° ìœ„í•œ ì¡°ê±´ë¬¸).
 
 				String grade = null;
 
-				if (score.getSubject().getSubjectid() == majorId) {	//ÁßÁ¡ °ú¸ñÀÌ¶ó¸é
+				if (score.getSubject().getSubjectid() == majorId) {	//ì¤‘ì  ê³¼ëª©ì´ë¼ë©´
 					grade = gradeEvaluation[Define.SAB_TYPE].getGrade(score.getPoint());
 				}
 				
