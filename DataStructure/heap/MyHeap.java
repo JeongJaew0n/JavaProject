@@ -2,7 +2,7 @@ package heap;
 
 /* 배열로 구현합니다.
 *   최소 힙을 구현합니다.(최대 힙도 가능)
-* */
+*/
 
 import java.util.Arrays;
 
