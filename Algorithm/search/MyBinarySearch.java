@@ -22,7 +22,7 @@ public class MyBinarySearch {
         int m = intArray.length/2;
         int L = 0;
         int R = intArray.length - 1;
-
+//
         int foundNumber;
 
         while (true) {
