@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.LinkedList;
 import java.util.Stack;
 import java.util.StringTokenizer;
-
+//
 public class N10828_Stack {
     public static void main(String[] args) {
         Stack<Integer> stack = new Stack<Integer>();
