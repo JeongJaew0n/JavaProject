@@ -1,7 +1,7 @@
 package logger;
-
-//³Ê¹« ÀûÀº ·Î±×(Á¤È®ÇÏ°Ô ½Ã½ºÅÛ ÆÄ¾Ç ¾î·Á¿ò)µµ, ³Ê¹« ¸¹Àº ·Î±×(¿À¹öÇìµå, ³Ê¹« ¸¹Àº file I/O)µµ ¾ÈÁÁÀ½.
-//·Î°Å -> ÇÚµé·¯ -> ·¹ÄÚµå
+//
+//ë„ˆë¬´ ì ì€ ë¡œê·¸(ì •í™•í•˜ê²Œ ì‹œìŠ¤í…œ íŒŒì•… ì–´ë ¤ì›€)ë„, ë„ˆë¬´ ë§ì€ ë¡œê·¸(ì˜¤ë²„í—¤ë“œ, ë„ˆë¬´ ë§ì€ file I/O)ë„ ì•ˆì¢‹ìŒ.
+//ë¡œê±° -> í•¸ë“¤ëŸ¬ -> ë ˆì½”ë“œ
 
 import java.io.IOException;
 import java.util.logging.FileHandler;
@@ -10,8 +10,8 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class MyLogger {
-	Logger logger = Logger.getLogger("mylogger");	//mylogger´Â ½Äº°ÀÚ. ¸Å¹ø °°Àº °´Ã¼¸¦ ¹İÈ¯ÇÔ. ÀÏÁ¾ÀÇ ½Ì±ÛÅæ ÆĞÅÏ
-	private static MyLogger instance = new MyLogger();	//½Ì±ÛÅæ ÆĞÅÏ
+	Logger logger = Logger.getLogger("mylogger");	//myloggerëŠ” ì‹ë³„ì. ë§¤ë²ˆ ê°™ì€ ê°ì²´ë¥¼ ë°˜í™˜í•¨. ì¼ì¢…ì˜ ì‹±ê¸€í†¤ íŒ¨í„´
+	private static MyLogger instance = new MyLogger();	//ì‹±ê¸€í†¤ íŒ¨í„´
 	
 	public static final String errorLog = "log.txt";
 	public static final String warningLog = "warning.txt";
@@ -23,9 +23,9 @@ public class MyLogger {
 	
 	private MyLogger() {
 		try {
-			logFile = new FileHandler(errorLog,true);	//true´Â append(Ãß°¡)ÇØ¼­ ÀÛ¼º.
+			logFile = new FileHandler(errorLog,true);	//trueëŠ” append(ì¶”ê°€)í•´ì„œ ì‘ì„±.
 			warningFile = new FileHandler(warningLog,true);	
-			fineFile = new FileHandler(fineLog,false);		//ÇÚµé·¯¸¦ ÅëÇØ ÆÄÀÏ ÀÔÃâ·Â.
+			fineFile = new FileHandler(fineLog,false);		//í•¸ë“¤ëŸ¬ë¥¼ í†µí•´ íŒŒì¼ ì…ì¶œë ¥.
 		} catch (SecurityException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -36,10 +36,10 @@ public class MyLogger {
 		warningFile.setFormatter(new SimpleFormatter());
 		fineFile.setFormatter(new SimpleFormatter());
 		
-		logger.setLevel(Level.ALL);	//¸ğµç ·¹º§(severe~finest)À» ´Ù Âï´Â´Ù.
+		logger.setLevel(Level.ALL);	//ëª¨ë“  ë ˆë²¨(severe~finest)ì„ ë‹¤ ì°ëŠ”ë‹¤.
 		
-		warningFile.setLevel(Level.WARNING);	//Á÷Á¢ ¼³Á¤ÇÏÁö ¾ÊÀ¸¸é ±âº»logger¸¦ µû¶ó°¨.
-		fineFile.setLevel(Level.FINE);			//¼³Á¤ÇØÁÖ¸é ÇØ´ç ·¹º§ ÀÌ»ó¸¸ ÂïÀ½.
+		warningFile.setLevel(Level.WARNING);	//ì§ì ‘ ì„¤ì •í•˜ì§€ ì•Šìœ¼ë©´ ê¸°ë³¸loggerë¥¼ ë”°ë¼ê°.
+		fineFile.setLevel(Level.FINE);			//ì„¤ì •í•´ì£¼ë©´ í•´ë‹¹ ë ˆë²¨ ì´ìƒë§Œ ì°ìŒ.
 		
 		logger.addHandler(logFile);
 		logger.addHandler(warningFile);
