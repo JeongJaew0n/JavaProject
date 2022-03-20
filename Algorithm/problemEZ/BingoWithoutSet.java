@@ -5,8 +5,7 @@ package problemEZ;
 * - hashset 사용해서 중복제거하면 되지만 쓰기 싫음.
 *  왜냐면 set 에 중복값이 들어가지 않는다고 하더라도
 *  똑같은 값이 random 에서 계속해서 나올 수 있기 때문.
-*
-* */
+*/
 
 // int a = (int)(Math.random() & (num - i) + i) // i ~ num-i까지 임의의 정수
 
