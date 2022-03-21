@@ -1,5 +1,4 @@
 package inner;
-//내부 클래스
 
 class OutClass {
 	
