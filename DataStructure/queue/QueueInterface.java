@@ -1,7 +1,6 @@
 package queue;
 
 /**
- *
  * 자바 Queue Interface입니다. <br>
  * Queue는 ArrayQueue, LinkedQueue,
  * Deque, PriorityQueue 에 의해 구현됩니다.
