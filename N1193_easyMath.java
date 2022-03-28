@@ -47,7 +47,7 @@ public class N1193_easyMath {
 				}
 				n++;
 			}
-			
+			//
 			order *= -1;
 			
 			if((n+1)%2 == 1) {
