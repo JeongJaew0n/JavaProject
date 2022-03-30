@@ -1,7 +1,7 @@
 package thread;
 
 //This code is for learn the join method
-
+//
 class PriorityThread extends Thread{
 	
 	public void run() {
