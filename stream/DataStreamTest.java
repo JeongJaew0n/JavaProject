@@ -16,7 +16,7 @@ public class DataStreamTest {
 		
 		try(BufferedOutputStream fos = new BufferedOutputStream(new FileOutputStream("data.txt"));	//FileOutputStream은 모든 보조 스트림의 상위 클래스이다. 
 		
-		//
+		
 		//모든 보조 스트림은 FileOutputStream또는FileInputStream을 상속 받음.
 		//Buffered스트림은 내부적으로 8,192byte 크기의 배열을 가지고 있다.
 		//버퍼링(buffering)기능을 제공하여 해당 크기의 배열에 채워서 입출력을 실행하므로 한 바이트 단위나 문자 단위로 읽고 쓰는 것 보다 빠르다.
