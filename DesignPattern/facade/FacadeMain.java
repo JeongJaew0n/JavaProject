@@ -1,7 +1,7 @@
 package facade;
 
 public class FacadeMain {
-
+//
     public static void main(String[] args) {
 
         /* facade패턴을 사용하지 않았을 경우 */
