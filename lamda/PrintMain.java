@@ -3,10 +3,10 @@ package lamda;
 public class PrintMain {
 
 	public static void main(String[] args) {
-		Hello hel = new Hello();	//ÀüÅëÀûÀÎ ¹æ½Ä.
-		hel.showString("Hi");
+		Hello hel = new Hello();	//ì „í†µì ì¸ ë°©ì‹.
+		hel.showString("Hi");//
 		
-		PrintString pt = new PrintString() {	//ÀÍ¸í ÇÔ¼ö¸¦ »ç¿ëÇÏ¿© ÀÎÅÍÆäÀÌ½º¸¦ ¹Ù·Î ±¸Çö.
+		PrintString pt = new PrintString() {	//ìµëª… í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ ì¸í„°í˜ì´ìŠ¤ë¥¼ ë°”ë¡œ êµ¬í˜„.
 			
 			public void showString(String s) {
 				System.out.println(s);
@@ -16,13 +16,13 @@ public class PrintMain {
 		pt.showString("WOW");
 			
 		
-		PrintString lamda_pt = s->System.out.println(s);	//¶÷´Ù½ÄÀ» ÀÌ¿ëÇØ ±¸ÇöÇØ¾ß ÇÒ ¸Ş¼­µå°¡ ÇÏ³ª »ÓÀÏ¶§ ÀÌ·±½ÄÀ¸·Î ±¸Çö °¡´É. ¸Å°³º¯¼ö -> ÇÔ¼ö³»¿ë
+		PrintString lamda_pt = s->System.out.println(s);	//ëŒë‹¤ì‹ì„ ì´ìš©í•´ êµ¬í˜„í•´ì•¼ í•  ë©”ì„œë“œê°€ í•˜ë‚˜ ë¿ì¼ë•Œ ì´ëŸ°ì‹ìœ¼ë¡œ êµ¬í˜„ ê°€ëŠ¥. ë§¤ê°œë³€ìˆ˜ -> í•¨ìˆ˜ë‚´ìš©
 		
 		lamda_pt.showString("This is Good lamda!");
 	}
 }
 
-class Hello implements PrintString {	//¿ø·¡ ¹æ½Ä implements¼±¾ğÇÏ°í ÇØ´ç ¸Ş¼­µå¸¦ ±¸ÇöÇÑ´Ù.
+class Hello implements PrintString {	//ì›ë˜ ë°©ì‹ implementsì„ ì–¸í•˜ê³  í•´ë‹¹ ë©”ì„œë“œë¥¼ êµ¬í˜„í•œë‹¤.
 
 	@Override
 	public void showString(String s) {
