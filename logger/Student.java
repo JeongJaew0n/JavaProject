@@ -1,7 +1,7 @@
 package logger;
 
 public class Student {
-
+//
 	private String studentName;
 	MyLogger myLogger = MyLogger.getLogger();
 	
@@ -12,7 +12,7 @@ public class Student {
 			throw new StudentNameFormatException("name must not be null");
 		}
 		if( studentName.split(" ").length > 3)
-			throw new StudentNameFormatException("ÀÌ¸§ÀÌ ³Ê¹« ±æ¾î¿ä");
+			throw new StudentNameFormatException("Ã€ÃŒÂ¸Â§Ã€ÃŒ Â³ÃŠÂ¹Â« Â±Ã¦Â¾Ã®Â¿Ã¤");
 		
 		this.studentName = studentName;
 	}
