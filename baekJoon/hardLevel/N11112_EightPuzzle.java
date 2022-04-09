@@ -1,7 +1,7 @@
 package hardLevel;
 
 /* I'm going to use A* algorithm. */
-
+//
 /* 1. move the #.
    2. heuristic is more correct sort of the numbers.
 * */
