@@ -12,7 +12,7 @@ public class Audi implements ICar{
 
     /* 밑의 구현은 패턴 공부할 때는 구현 안해도됨. */
     /* 단순 훅 메소드가 되어도 됨 */
-
+//
     @Override
     public String getColor() {
         return color;
