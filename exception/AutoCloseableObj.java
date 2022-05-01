@@ -1,13 +1,13 @@
 package exception;
-
+//
 /*
- * try-with-resources ¶õ?
- * try¹® ¾È¿¡ ¼±¾ðµÈ ÆÄÀÏ I/O¿Í ÇÚµé·¯ °ü·Ã °´Ã¼µéÀº close¸¦ ÇØÁÖ¾î¾ß ÇÑ´Ù.
- * try-catch-finally¸¦ ÅëÇØ finally ±¸¹®¿¡¼­ close¸¦ ÇØÁÖ¸é ¿À·ù°¡ ³ª´õ¶óµµ Á¤»óÀûÀ¸·Î close°¡ µÇÁö¸¸,
- * ÇÁ·Î±×·¡¸Ó°¡ Á÷Á¢ ÇÏ´Ùº¸¸é ½Ç¼ö°¡ ³¯ ¼öµµ ÀÖ°í À¯Áöº¸¼öÇÏ±â ¾î·Á¿ö Áø´Ù.
- * µû¶ó¼­ try¹® ¾È¿¡ ¼±¾ðµÈ °´Ã¼´Â try¹®ÀÇ Á¾·á¿Í ÇÔ²² ÀÚµ¿À¸·Î ³¡³ª´Â °ÍÀÌ try-with-resources´Ù.
+ * try-with-resources ëž€?
+ * tryë¬¸ ì•ˆì— ì„ ì–¸ëœ íŒŒì¼ I/Oì™€ í•¸ë“¤ëŸ¬ ê´€ë ¨ ê°ì²´ë“¤ì€ closeë¥¼ í•´ì£¼ì–´ì•¼ í•œë‹¤.
+ * try-catch-finallyë¥¼ í†µí•´ finally êµ¬ë¬¸ì—ì„œ closeë¥¼ í•´ì£¼ë©´ ì˜¤ë¥˜ê°€ ë‚˜ë”ë¼ë„ ì •ìƒì ìœ¼ë¡œ closeê°€ ë˜ì§€ë§Œ,
+ * í”„ë¡œê·¸ëž˜ë¨¸ê°€ ì§ì ‘ í•˜ë‹¤ë³´ë©´ ì‹¤ìˆ˜ê°€ ë‚  ìˆ˜ë„ ìžˆê³  ìœ ì§€ë³´ìˆ˜í•˜ê¸° ì–´ë ¤ì›Œ ì§„ë‹¤.
+ * ë”°ë¼ì„œ tryë¬¸ ì•ˆì— ì„ ì–¸ëœ ê°ì²´ëŠ” tryë¬¸ì˜ ì¢…ë£Œì™€ í•¨ê»˜ ìžë™ìœ¼ë¡œ ëë‚˜ëŠ” ê²ƒì´ try-with-resourcesë‹¤.
  * 
- * AutoCloseableÀ» ±¸ÇöÇÑ 
+ * AutoCloseableì„ êµ¬í˜„í•œ 
  */
 
 public class AutoCloseableObj implements AutoCloseable {
