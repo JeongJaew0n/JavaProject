@@ -1,5 +1,5 @@
 package stack;
-
+//
 /**
  *
  * 자바 stack Interface입니다. <br>
