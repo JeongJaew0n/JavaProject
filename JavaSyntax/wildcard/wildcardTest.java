@@ -9,7 +9,7 @@ public class wildcardTest {
         testColllection.add(1233);
         printCollection(testColllection);
     }
-
+//
     static void printCollection(Collection<? extends Number> c) {
         for (Number e : c) {
             System.out.print(e);
