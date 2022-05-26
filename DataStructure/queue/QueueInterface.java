@@ -1,5 +1,5 @@
 package queue;
-
+//
 /**
  * 자바 Queue Interface입니다. <br>
  * Queue는 ArrayQueue, LinkedQueue,
