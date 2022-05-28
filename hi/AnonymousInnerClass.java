@@ -1,6 +1,6 @@
 package hi;
 //익명 내부 클래스는 인터페이스나 추상클래스를 바로 구현하는데 주로 사용됨 ex)안드로이드 프로그래밍시에 이벤트핸들러(터치와 같은) 구현시에 사용.
-//
+////
 class Outer{
 	
 	Runnable getRunnable(int i) {
