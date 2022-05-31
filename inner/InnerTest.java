@@ -1,5 +1,5 @@
 package inner;
-//
+////
 class OutClass {
 	//
 	private int num = 10;
