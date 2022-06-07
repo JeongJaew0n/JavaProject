@@ -1,5 +1,5 @@
 package exception;
-//
+////
 public class AutoCloseTestMain {
 //
 	public static void main(String[] args) {
