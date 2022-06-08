@@ -1,7 +1,7 @@
 package singleton;
 
 public class SingletonMain {
-
+//
     public static void main(String[] args) {
 	// write your code here
         Aclazz aclazz = new Aclazz();
