@@ -1,5 +1,5 @@
 package thread;
-
+//
 //This code is for learn the thread.
 
 import java.io.IOException;
