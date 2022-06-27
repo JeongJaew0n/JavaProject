@@ -1,5 +1,5 @@
 package thread;
-//
+////
 class Bank {	//동기화(synchronization)를 공부하기 위한 클래스.
 	private int money = 10000;	//Pong과 PongWife는 두 클래스 모두 이 변수를 참조하는 메서드를 사용한다.
 	public static int king = 100;
